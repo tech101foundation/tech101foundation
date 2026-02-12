@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech 101 Foundation | Technology Made Comfortable</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Tech 101 Foundation empowers older adults in Palm Beach County through technology education.">
+    <meta name="description" content="Tech 101 Foundation partners with older adults in Palm Beach County for technology education.">
 </head>
 <body>
 
     <header>
         <div class="container nav-container">
             <div class="logo-area">
-                <img src="Logo(1).png" alt="Tech 101 Foundation Logo" class="logo-img">
+                <img src="logo.png" alt="Tech 101 Foundation Logo" class="logo-img">
                 <span class="logo-text">Tech 101 Foundation</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li> 
+                    <li><a href="partners.html">For Communities</a></li>
+                    <li><a href="contact.html">Contact</a></li> 
                 </ul>
             </nav>
         </div>
@@ -48,20 +49,31 @@
         </div>
     </section>
 
-    <section class="location">
+    <section id="contact">
         <div class="container">
-            <div class="card" style="border-left: 8px solid var(--forest-green); border-top: none;">
-                <h3>Serving Palm Beach County</h3>
-                <p>We are neighbors, not "IT Support." Located right here in Florida, we are dedicated to helping our local community stay connected.</p>
+            <div class="card">
+                <h3>Contact Us</h3>
+                <p style="margin-bottom: 15px;">We are neighbors, dedicated to helping our local community stay connected. Located right here in Florida.</p>
+                
+                <p><strong>Email:</strong> <a href="mailto:admin@tech101foundation.org">admin@tech101foundation.org</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+15618094088">(561) 809-4088</a></p>
+                <p><strong>Location:</strong> Palm Beach County, FL</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Tech 101 Foundation. All rights reserved.</p>
-            <p>Palm Beach County, FL</p>
+            <p style="margin-bottom: 10px;"><strong>Tech 101 Foundation</strong></p>
+            <p style="margin-bottom: 20px;">
+                <a href="mailto:admin@tech101foundation.org" style="color: var(--sage-green);">admin@tech101foundation.org</a> | 
+                <a href="tel:+15618094088" style="color: var(--sage-green);">(561) 809-4088</a>
+            </p>
+            <p>
+                &copy; <span id="year-index"></span> Tech 101 Foundation. All rights reserved.
+            </p>
         </div>
+        <script>document.getElementById("year-index").innerHTML = new Date().getFullYear();</script>
     </footer>
 
 </body>
