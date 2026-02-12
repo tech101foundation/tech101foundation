@@ -1,17 +1,16 @@
-/* --- TECH 101 FOUNDATION: MODERN THEME --- */
+/* --- TECH 101 FOUNDATION: FINAL MASTER THEME --- */
 
-/* 1. Import Fonts: Only Montserrat (Weights: 400, 600, 800) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+/* 1. Import Fonts: Poppins (Headers) & Montserrat (Body) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Montserrat:wght@400;600&display=swap');
 
 :root {
     --forest-green: #2E5936;
     --forest-dark: #1A3320; 
     --sage-green: #8FBC8F;
-    --charcoal: #2c2c2c; /* Slightly softer black */
+    --charcoal: #2c2c2c;
     --parchment: #F9F8F2;
     --white: #ffffff;
-    /* Modern, diffused shadow (The "Apple" look) */
-    --shadow-modern: 0 20px 40px -10px rgba(46, 89, 54, 0.1); 
+    --shadow-modern: 0 20px 40px -10px rgba(46, 89, 54, 0.15); 
 }
 
 /* 2. Global Resets */
@@ -24,24 +23,59 @@
 body {
     background-color: var(--parchment);
     color: var(--charcoal);
-    font-family: 'Montserrat', sans-serif; /* Applied to EVERYTHING */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.7;
-    font-size: 1.2rem; /* Keep it readable */
+    font-size: 1.15rem; 
 }
 
-/* 3. Modern Typography */
+/* 3. Typography & "Pop" Headers */
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--forest-green);
     margin-bottom: 1rem;
     line-height: 1.2;
-    font-weight: 800; /* Extra Bold for that modern punch */
-    letter-spacing: -0.5px; /* Tight tracking looks more professional */
+    letter-spacing: -0.5px;
 }
 
-h1 { font-size: 3.5rem; color: var(--white); }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; color: var(--sage-green); margin-bottom: 0.5rem;}
+h1 { 
+    font-size: 3.5rem; 
+    color: var(--white); 
+    font-weight: 900; 
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+h2 { 
+    font-size: 2.2rem; 
+    font-weight: 700;
+    position: relative; 
+    display: inline-block; 
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* The "Highlighter" Effect */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px; 
+    background-color: var(--sage-green);
+    opacity: 0.4; 
+    z-index: -1; 
+    border-radius: 4px;
+}
+
+h3 { 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    color: var(--forest-green); 
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
 
 a {
     text-decoration: none;
@@ -64,9 +98,8 @@ a:hover {
 /* --- HEADER --- */
 header {
     background-color: var(--white);
-    padding: 1.5rem 0;
-    /* No border, just a clean shadow */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -81,25 +114,26 @@ header {
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .logo-img {
-    height: 60px; /* Slightly smaller for a cleaner navbar */
+    height: 55px; 
     width: auto;
 }
 
 .logo-text {
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 900; 
+    font-family: 'Poppins', sans-serif;
     color: var(--forest-green);
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px; /* More breathing room between links */
+    gap: 30px; 
 }
 
 nav a {
@@ -112,21 +146,27 @@ nav a:hover {
     color: var(--forest-green);
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (Tech Grid) --- */
 .hero {
-    /* Cleaner, subtle gradient */
-    background: linear-gradient(180deg, var(--forest-green) 0%, var(--forest-dark) 100%);
-    padding: 6rem 0;
+    background-color: var(--forest-green);
+    /* Subtle dot pattern overlay */
+    background-image: 
+        radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px), 
+        linear-gradient(160deg, var(--forest-green) 0%, var(--forest-dark) 100%);
+    background-size: 30px 30px, 100% 100%;
+    
+    padding: 7rem 0 6rem 0;
     text-align: center;
-    border-radius: 0 0 50px 50px; /* Modern curve at the bottom */
-    margin-bottom: 3rem;
+    border-radius: 0 0 60px 60px; /* Curve */
+    margin-bottom: 4rem;
+    box-shadow: 0 20px 50px -20px rgba(46, 89, 54, 0.5);
 }
 
 .hero p {
     font-size: 1.4rem;
-    max-width: 700px;
+    max-width: 750px;
     margin: 1.5rem auto 2.5rem auto;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.95);
     font-weight: 400;
 }
 
@@ -135,24 +175,26 @@ nav a:hover {
     display: inline-block;
     background-color: var(--sage-green);
     color: var(--forest-dark);
-    padding: 16px 40px;
+    padding: 18px 45px;
     border-radius: 100px;
-    font-weight: 700;
+    font-weight: 800; 
     font-size: 1.1rem;
     border: none;
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     background-color: var(--white);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 /* --- SECTIONS & CARDS --- */
 section {
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 .grid-2 {
@@ -164,38 +206,90 @@ section {
 
 .card {
     background: var(--white);
-    padding: 3.5rem; /* Lots of internal whitespace */
-    border-radius: 30px; /* Very round corners */
+    padding: 3rem; 
+    border-radius: 25px; 
     box-shadow: var(--shadow-modern);
-    border: none; /* Removed the "boxy" border */
+    border: 1px solid rgba(0,0,0,0.03); 
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: visible; /* Lets the animation breathe */
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Subtle lift interaction */
+    transform: translateY(-8px); 
+}
+
+/* --- CSS-ONLY ICONS & BLOBS --- */
+
+/* 1. The Organic Container (Injected before Headers) */
+.card h2::before, 
+#contact .card h3::before {
+    content: ''; 
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    background-color: #e8f5e9; 
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    animation: blob-pulse 8s ease-in-out infinite;
+    
+    /* Center the icon inside */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px; 
+}
+
+/* 2. Specific Icons for Each Card */
+
+/* 1st Card (Mission): Sprout Icon */
+.grid-2 .card:nth-of-type(1) h2::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%232E5936' d='M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-48,48,48,48,0,0,1-48-48,8,8,0,0,1,16,0,32,32,0,0,0,32,32,32,32,0,0,0,32-32,8,8,0,0,1,16,0Zm-48,56a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V152A8,8,0,0,1,128,144Z' opacity='0.2'/%3E%3Cpath fill='%232E5936' d='M128,128a40,40,0,0,0,40-40,8,8,0,0,0-16,0,24,24,0,0,1-48,0,8,8,0,0,0-16,0A40,40,0,0,0,128,128Zm0,8a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V144A8,8,0,0,0,128,136Z'/%3E%3C/svg%3E");
+}
+
+/* 2nd Card (Vision): Sun Icon */
+.grid-2 .card:nth-of-type(2) h2::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%232E5936' d='M128,40A88,88,0,1,0,216,128,88.1,88.1,0,0,0,128,40Zm0,160a72,72,0,1,1,72-72A72.1,72.1,0,0,1,128,200Z' opacity='0.2'/%3E%3Cpath fill='%232E5936' d='M128,64a64,64,0,1,0,64,64A64.1,64.1,0,0,0,128,64Zm0,112a48,48,0,1,1,48-48A48.1,48.1,0,0,1,128,176ZM232,120h-8a8,8,0,0,0,0,16h8a8,8,0,0,0,0-16ZM56.8,78.5a8.1,8.1,0,0,0-5.7,2.3,8.1,8.1,0,0,0,0,11.4l5.6,5.6a8.2,8.2,0,0,0,11.4,0,8.1,8.1,0,0,0,0-11.4l-5.7-5.6A8.1,8.1,0,0,0,56.8,78.5ZM24,120H32a8,8,0,0,0,0,16H24a8,8,0,0,0,0-16Zm175.2-19.2a8.2,8.2,0,0,0,11.4,0l5.6-5.6a8.1,8.1,0,0,0-11.4-11.4l-5.6,5.7A8.1,8.1,0,0,0,199.2,100.8Z'/%3E%3C/svg%3E");
+}
+
+/* Contact Card: Chat Icon */
+#contact .card h3::before,
+.contact-page .card h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%232E5936' d='M216,48H40A16,16,0,0,0,24,64V224a15.8,15.8,0,0,0,9.2,14.4,16.2,16.2,0,0,0,6.8,1.6,15.9,15.9,0,0,0,9.6-3.2L83.6,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48Z' opacity='0.2'/%3E%3Cpath fill='%232E5936' d='M216,40H40A24,24,0,0,0,16,64V192a24,24,0,0,0,24,24H77.3l36.6,29.3A16,16,0,0,0,124,248a16.4,16.4,0,0,0,6.2-1.2,15.9,15.9,0,0,0,9.8-14.8V216h76a24,24,0,0,0,24-24V64A24,24,0,0,0,216,40ZM40,200a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V192a8,8,0,0,1-8,8H132a8,8,0,0,0-8,8v22.6L91.7,201.4A15.9,15.9,0,0,0,81.8,198.8L40,200Z'/%3E%3C/svg%3E");
+}
+
+@keyframes blob-pulse {
+    0% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; transform: scale(1); }
+    50% { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; transform: scale(1.05); }
+    100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; transform: scale(1); }
 }
 
 /* --- FOOTER --- */
 footer {
     background-color: var(--charcoal);
-    color: rgba(255,255,255,0.8);
-    padding: 4rem 0;
+    color: rgba(255,255,255,0.7);
+    padding: 5rem 0;
     text-align: center;
-    font-size: 0.9rem;
-    margin-top: 4rem;
+    font-size: 0.95rem;
+    margin-top: 5rem;
+}
+
+footer strong {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 footer a {
     color: var(--white);
-    text-decoration: underline;
-    text-decoration-color: var(--sage-green);
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero { padding: 4rem 0; border-radius: 0 0 30px 30px; }
-    h1 { font-size: 2.5rem; }
+    .hero { padding: 5rem 0; border-radius: 0 0 30px 30px; }
+    h1 { font-size: 2.8rem; } 
     .grid-2 { grid-template-columns: 1fr; }
     .nav-container { flex-direction: column; gap: 20px; }
-    nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
+    nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
 }
