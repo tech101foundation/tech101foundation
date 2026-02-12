@@ -1,18 +1,19 @@
 /* --- TECH 101 FOUNDATION BRAND STYLES --- */
 
-/* 1. Import Fonts: Bitter (Headers) and Montserrat (Body) */
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Montserrat:wght@400;600&display=swap');
+/* 1. Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Montserrat:wght@400;500;600&display=swap');
 
 :root {
-    /* 2. Color Palette Definition */
     --forest-green: #2E5936;
+    --forest-dark: #1e3b24; /* New: Darker shade for gradients */
     --sage-green: #8FBC8F;
     --charcoal: #333333;
     --parchment: #F9F8F2;
     --white: #ffffff;
+    --shadow-soft: 0 10px 30px rgba(46, 89, 54, 0.15); /* New: Soft Green Shadow */
 }
 
-/* 3. Global Resets & Accessibility Settings */
+/* 2. Global Resets */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,11 +21,10 @@
 }
 
 body {
-    background-color: var(--parchment); /* Warm background to reduce glare */
-    color: var(--charcoal); /* High contrast but not harsh black */
+    background-color: var(--parchment);
+    color: var(--charcoal);
     font-family: 'Montserrat', Arial, sans-serif;
-    line-height: 1.6;
-    /* Setting base size larger for readability (approx 20px) */
+    line-height: 1.8; /* Increased for better readability */
     font-size: 1.25rem; 
 }
 
@@ -35,14 +35,15 @@ h1, h2, h3 {
     line-height: 1.3;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
+h1 { font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); } /* Text shadow added */
+h2 { font-size: 2.2rem; }
 h3 { font-size: 1.5rem; }
 
 a {
     text-decoration: none;
     color: var(--forest-green);
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 a:hover {
@@ -62,6 +63,7 @@ header {
     background-color: var(--white);
     padding: 1rem 0;
     border-bottom: 5px solid var(--sage-green);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* subtle shadow */
 }
 
 .nav-container {
@@ -78,7 +80,7 @@ header {
 }
 
 .logo-img {
-    height: 80px; /* Adjust based on your actual logo file */
+    height: 80px; 
     width: auto;
 }
 
@@ -96,20 +98,26 @@ nav ul {
 }
 
 nav a {
-    font-weight: 600;
     font-size: 1.1rem;
+    color: var(--charcoal);
 }
 
-/* --- HERO SECTION --- */
+nav a:hover {
+    color: var(--forest-green);
+}
+
+/* --- HERO SECTION (Dynamic Upgrade) --- */
 .hero {
-    background-color: var(--forest-green);
+    /* Gradient background for depth */
+    background: linear-gradient(135deg, var(--forest-green), var(--forest-dark)); 
     color: var(--parchment);
-    padding: 4rem 0;
+    padding: 5rem 0; /* More vertical space */
     text-align: center;
+    border-bottom: 8px solid var(--sage-green);
 }
 
 .hero h1 {
-    color: var(--sage-green); /* Contrast against dark green bg */
+    color: var(--white); /* Brighter text against dark bg */
     margin-bottom: 1rem;
 }
 
@@ -117,48 +125,46 @@ nav a {
     font-size: 1.5rem;
     max-width: 800px;
     margin: 0 auto 2rem auto;
+    opacity: 0.9;
 }
 
-/* Primary Button Styling */
+/* Primary Button */
 .btn {
     display: inline-block;
     background-color: var(--sage-green);
-    color: var(--forest-green);
-    padding: 15px 30px;
-    border-radius: 8px; /* Soft corners */
+    color: var(--forest-dark);
+    padding: 18px 36px;
+    border-radius: 50px; /* Fully rounded "pill" shape is friendlier */
     font-weight: 700;
     font-size: 1.2rem;
-    border: 2px solid var(--sage-green);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
 }
 
 .btn:hover {
     background-color: var(--parchment);
-    color: var(--forest-green);
-    border-color: var(--parchment);
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
-/* --- CONTENT SECTIONS --- */
+/* --- CARDS & CONTENT (The Depth Effect) --- */
 section {
     padding: 4rem 0;
-}
-
-.mission-vision {
-    background-color: var(--white);
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
+    align-items: start; /* Aligns tops of cards */
 }
 
+/* This is the magic class for depth */
 .card {
-    background: var(--parchment);
-    padding: 2rem;
-    border-radius: 10px;
-    border-left: 8px solid var(--forest-green);
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px; /* Soft corners */
+    box-shadow: var(--shadow-soft); /* The lift effect */
+    border-top: 6px solid var(--sage-green); /* Accent line */
 }
 
 /* --- FOOTER --- */
@@ -168,14 +174,6 @@ footer {
     padding: 3rem 0;
     text-align: center;
     margin-top: auto;
-}
-
-footer p {
-    font-size: 1rem;
-}
-
-footer a {
-    color: var(--sage-green);
 }
 
 /* --- RESPONSIVE MOBILE --- */
@@ -193,6 +191,7 @@ footer a {
     
     .grid-2 {
         grid-template-columns: 1fr;
-        gap: 2rem;
     }
+    
+    h1 { font-size: 2.2rem; }
 }
