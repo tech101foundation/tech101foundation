@@ -11,14 +11,15 @@
     <header>
         <div class="container nav-container">
             <div class="logo-area">
-                <img src="Logo(1).png" alt="Tech 101 Foundation Logo" class="logo-img">
+                <img src="Logo.png" alt="Tech 101 Foundation Logo" class="logo-img">
                 <span class="logo-text">Tech 101 Foundation</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="partners.html">For Communities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,7 +28,7 @@
     <section class="hero">
         <div class="container">
             <h1>About Tech 101</h1>
-            <p style="font-size: 1.3rem; margin-top: 10px;">Empowering Independence Through Technology</p>
+            <p>Empowering Independence Through Technology</p>
         </div>
     </section>
 
@@ -37,9 +38,9 @@
                 
                 <div class="card">
                     <h2>Our Program</h2>
-                    <p>Tech 101 Foundation provides comprehensive technology education and hands-on opportunities in Palm Beach County.</p>
+                    <p>Tech 101 Foundation provides comprehensive technology education and hands-on opportunities in Palm Beach County. We offer workshops, classes, and personal coaching designed to help you master your devices.</p>
                     <br>
-                    <p>We offer workshops, classes, and personal coaching designed to help you master your devices. Our team acts as a community partner, providing technical expertise and a patient learning environment.</p>
+                    <p>Our team acts as a community partner. We provide the technical expertise and a patient learning environment, allowing you to focus on the skills you want to build.</p>
                 </div>
 
                 <div class="card">
@@ -47,7 +48,7 @@
                     <ul style="margin-left: 20px; margin-top: 15px;">
                         <li style="margin-bottom: 15px;"><strong>Affirmative:</strong> Our curriculum focuses on practical, real-world tasks and successful outcomes.</li>
                         <li style="margin-bottom: 15px;"><strong>Accessible:</strong> We design our materials and instruction to be clear, readable, and easy to follow.</li>
-                        <li style="margin-bottom: 15px;"><strong>Dignified:</strong> We offer a professional partnership centered on your specific goals.</li>
+                        <li style="margin-bottom: 15px;"><strong>Dignified:</strong> We offer a professional partnership centered on your specific goals and questions.</li>
                     </ul>
                 </div>
 
@@ -57,21 +58,28 @@
 
     <section>
         <div class="container" style="text-align: center;">
-            <div class="card" style="background-color: var(--forest-green); color: var(--parchment); border-top: none;">
+            <div class="card" style="background-color: var(--forest-green); color: var(--white);">
                 <h2 style="color: var(--white);">Join Our Community</h2>
-                <p style="max-width: 700px; margin: 0 auto 2rem auto; font-size: 1.3rem;">
+                <p style="max-width: 700px; margin: 0 auto 2rem auto;">
                     We partner with you to build on your skills and interests. You gain more knowledge to connect digitally with loved ones and protect your personal information.
                 </p>
-                <a href="#" class="btn" style="background-color: var(--parchment); color: var(--forest-green);">View Upcoming Classes</a>
+                <a href="contact.html" class="btn" style="background-color: var(--white); color: var(--forest-green);">View Upcoming Classes</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Tech 101 Foundation. All rights reserved.</p>
-            <p>Palm Beach County, FL</p>
+            <p style="margin-bottom: 10px;"><strong>Tech 101 Foundation</strong></p>
+            <p style="margin-bottom: 20px;">
+                <a href="mailto:admin@tech101foundation.org" style="color: var(--sage-green);">admin@tech101foundation.org</a> | 
+                <a href="tel:+15618094088" style="color: var(--sage-green);">(561) 809-4088</a>
+            </p>
+            <p>
+                &copy; <span id="year-about"></span> Tech 101 Foundation. All rights reserved.
+            </p>
         </div>
+        <script>document.getElementById("year-about").innerHTML = new Date().getFullYear();</script>
     </footer>
 
 </body>
