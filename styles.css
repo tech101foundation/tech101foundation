@@ -293,3 +293,47 @@ footer a {
     .nav-container { flex-direction: column; gap: 20px; }
     nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
 }
+/* --- TEAM PAGE STYLES --- */
+
+.team-card {
+    text-align: center;
+    padding-top: 4rem; /* Extra room for the image popping out */
+}
+
+.team-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem auto;
+    background-color: var(--sage-green);
+    
+    /* Organic Blob Shape */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    overflow: hidden; /* Clips the image to the blob shape */
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow-modern);
+    transition: all 0.5s ease;
+}
+
+.team-card:hover .team-image-container {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+    transform: scale(1.05) rotate(2deg);
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures faces aren't squished */
+    filter: grayscale(20%); /* Softens the photos for a uniform look */
+    transition: all 0.5s ease;
+}
+
+.team-card:hover .team-img {
+    filter: grayscale(0%);
+}
+
+.bio-placeholder {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: var(--charcoal);
+    text-align: left; /* Easier to read long bios */
+}
