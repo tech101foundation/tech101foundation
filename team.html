@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Tech 101 Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo-area">
+                <img src="Logo.png" alt="Tech 101 Foundation Logo" class="logo-img">
+                <span class="logo-text">Tech 101 Foundation</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="partners.html">For Communities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Meet the Team</h1>
+            <p>The dedicated individuals working to bridge the digital gap in our community.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 style="text-align: center; display: block; margin-bottom: 4rem;">Leadership</h2>
+            
+            <div class="grid-2">
+                
+                <div class="card team-card">
+                    <div class="team-image-container">
+                        <img src="azize.png" alt="Azize Awad" class="team-img">
+                    </div>
+                    <h2>Azize Awad</h2>
+                    <h3>Founder & Executive Director</h3>
+                    <p class="bio-placeholder">
+                    </p>
+                </div>
+
+                <div class="card team-card">
+                    <div class="team-image-container">
+                        <img src="malak.png" alt="Malak Baker" class="team-img">
+                    </div>
+                    <h2>Malak Baker, LMSW</h2>
+                    <h3>Board Member</h3>
+                    <p class="bio-placeholder">
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: rgba(46, 89, 54, 0.03); padding: 5rem 0; margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <h2>Advisory Board</h2>
+            <p style="max-width: 600px; margin: 1rem auto;">We are guided by a diverse group of professionals dedicated to our mission of technology literacy for older adults.</p>
+            <p style="font-style: italic; margin-top: 2rem; color: var(--sage-green);">New board announcements coming soon.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 10px;"><strong>Tech 101 Foundation</strong></p>
+            <p style="margin-bottom: 20px;">
+                <a href="mailto:admin@tech101foundation.org" style="color: var(--sage-green);">admin@tech101foundation.org</a> | 
+                <a href="tel:+15618094088" style="color: var(--sage-green);">(561) 809-4088</a>
+            </p>
+            <p>
+                &copy; <span id="year-team"></span> Tech 101 Foundation. All rights reserved.
+            </p>
+        </div>
+        <script>document.getElementById("year-team").innerHTML = new Date().getFullYear();</script>
+    </footer>
+
+</body>
+</html>
